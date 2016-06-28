@@ -21,7 +21,11 @@ website:   http://obazedesigns.com
 $border: solid 1px;
 $body-font-size: 10px;
 $section-height: 96em;
-$white-font: #ffffff;
+$white-font: $white-color;
+
+%columns{
+	padding: 0 2rem 0 2rem;
+}
 
 %h2-values{
 	text-align: center;
@@ -46,7 +50,7 @@ $white-font: #ffffff;
 
 %port-container{
 	padding-top: 5%;
-    background: #ffffff;
+    background: $white-color;
     clear: both;
     margin: 0 auto;
     width: 100%;
@@ -70,6 +74,7 @@ a:link, a:visited, a:hover, a:focus, a:active
 
 html{
 	font-size: $body-font-size;
+	font-family: 'Exo 2', sans-serif;
 }
 
 *{
@@ -83,6 +88,10 @@ body{
 	width: 100%;
 	margin: 0 auto;
 
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Exo 2', sans-serif;
 }
 
 hr{
@@ -130,7 +139,7 @@ header.main-header{
 	z-index: 2;
 	width: 100%;
 	background-color: transparent;
-	padding: 2em 0 2em 0;
+	padding: 2rem 2rem 2rem 2rem;
 	clear: both;
 	overflow: auto;
 
@@ -145,13 +154,10 @@ header.main-header{
 .top-bar-left{
 	width: 100%;
 	max-width: 5em;
-	margin-left: 1.6%;
 }
 
 .title-bar{
-	background: transparent;
-	float: right;
-	padding: 1rem;
+	display: none;
 }
 
 .top-bar, .top-bar ul{
@@ -171,12 +177,11 @@ ul.active-nav{
 }
 
 .active-link{
-	border-bottom: solid $green-color 0.3em;
+	color: $green-color !important;
 }
 
 nav.main-nav{
 	float: right;
-	padding-right: 2%;
 	position: relative;
 	top: 1.3em;
 
@@ -195,9 +200,9 @@ nav.main-nav{
 
 			a{
 				text-decoration: none;
-				color:#ffffff;
-				font-size: 1.7em;
-				font-weight: 500;
+				color:$white-color;
+				font-size: 2em;
+				font-weight: 600;
 				padding: 0.11em;
 				line-height: 1.2;
 				display: block;
@@ -207,7 +212,7 @@ nav.main-nav{
 				}*/
 
 				&:hover, &:focus, /*&:active*/{
-					border-bottom: solid $green-color .3em;
+					color: $green-color;
 				}
 			}
 		}
@@ -269,7 +274,7 @@ div.home-contents{
 
 	h1{
 		width: 100%;
-		color: #ffffff;
+		color: $white-color;
 		font-size: 15em;
 		text-align: center;
 		margin: 0 auto;
@@ -282,7 +287,7 @@ div.home-contents{
 
 	h2{
 		width: 100%;
-		color: #ffffff;
+		color: $white-color;
 		font-size: 4em;
 		text-align: center;
 		margin: 0 auto;
@@ -326,7 +331,7 @@ a.dwn-btn{
 section.home-portfolio-container{
 	width:100%;
 	height: 120em;
-	background-color: #ffffff;
+	background-color: $white-color;
 }
 
 div#home-portfolio{
@@ -376,7 +381,7 @@ div.left-top{
 			width: 6em;
 			position: relative;
 			padding: 0.5em;
-			color: #ffffff;
+			color: $white-color;
 			font-weight: bold;
 			text-decoration: none;
 			z-index: 1;
@@ -412,7 +417,7 @@ div.right-top{
 			width: 8.1em;
 			position: relative;
 			padding: 0.5em;
-			color: #ffffff;
+			color: $white-color;
 			font-weight: bold;
 			text-decoration: none;
 			z-index: 1;
@@ -444,7 +449,7 @@ div.left-bottom-one{
 			width: 10em;
 			position: relative;
 			padding: 0.5em;
-			color: #ffffff;
+			color: $white-color;
 			font-weight: bold;
 			text-decoration: none;
 			z-index: 1;
@@ -476,7 +481,7 @@ div.left-bottom-two{
 			width: 8em;
 			position: relative;
 			padding: 0.5em;
-			color: #ffffff;
+			color: $white-color;
 			font-weight: bold;
 			text-decoration: none;
 			z-index: 1;
@@ -507,7 +512,7 @@ div.right-bottom{
 			width: 9em;
 			position: relative;
 			padding: 0.5em;
-			color: #ffffff;
+			color: $white-color;
 			font-weight: bold;
 			text-decoration: none;
 			z-index: 1;
@@ -529,15 +534,15 @@ div.port{
 		padding: 1em;
 		font-size: 2em;
 		font-weight: 600;
-		color: $orange-color;
-		background-color: #ffffff;
-		border: solid $orange-color 0.125em;
+		color: $green-color;
+		background-color: $white-color;
+		border: solid $green-color 0.125em;
 		box-sizing: border-box;
 		display: block;
 
 		&:hover, &:focus{
-			color: #ffffff;
-			background-color: $orange-color;
+			color: $white-color;
+			background-color: $green-color;
 		}
 
 	}
@@ -627,14 +632,14 @@ div#phil{
 
 	h2{
 		@extend %h2-values;
-		color: #ffffff;
+		color: $white-color;
 	}
 
 	p{
 		font-size: 2.5em;
 		font-weight: 200;
 		line-height: 1.5em;
-		color: #ffffff;
+		color: $white-color;
 		width: 36em;
 		max-width: 100%;
 		margin: 0 auto;
@@ -663,7 +668,7 @@ div#expertise{
 
 	h2{
 		@extend %h2-values;
-		color: #ffffff;
+		color: $white-color;
 		margin-bottom: 5%;
 	}
 
@@ -703,7 +708,7 @@ div.ex-icon{
 		text-align: left;
 		font-size: 2em;
 		font-weight: bold;
-		color: #ffffff;
+		color: $white-color;
 		width: 19em;
 		margin-top: 1em;
 		float: left;
@@ -738,14 +743,14 @@ div#about{
 
 	h2{
 		@extend %h2-values;
-		color: #ffffff;
+		color: $white-color;
 	}
 
 	&>p{
 		font-size: 2em;
 		font-weight: 200;
 		line-height: 1.5em;
-		color: #ffffff;
+		color: $white-color;
 		width: 41em;
 		max-width: 100%;
 		margin: 0 auto;
@@ -759,7 +764,7 @@ div#about{
 			font-weight: 500;
 
 			&:hover, &:focus{
-				color: $orange-color;
+				color: $green-color;
 			}
 		}
 	}
@@ -857,16 +862,16 @@ div.dwn-pdf{
 	a{
 		text-decoration: none;
 		padding: 1em;
-		color: $orange-color;
+		color: $green-color;
 		background-color: transparent;
-		border: solid $orange-color 0.2em;
+		border: solid $green-color 0.2em;
 		box-sizing: border-box;
 		display: block;
 		height: 5em;
 
 		&:hover, &:focus{
-			color: #ffffff;
-			background-color: $orange-color;
+			color: $white-color;
+			background-color: $green-color;
 		}
 
 		&>p{
@@ -913,7 +918,7 @@ div#top-portfolio{
 
 	h1{
 		width: 100%;
-		color: #ffffff;
+		color: $white-color;
 		font-size: 15em;
 		text-align: center;
 		margin: 0 auto;
@@ -934,7 +939,7 @@ div#top-portfolio{
 		position: fixed;
 		z-index: -1;
 		font-family: 'Kaushan Script', cursive;
-		color: #ffffff;
+		color: $white-color;
 	}
 
 }
@@ -945,7 +950,7 @@ div#top-portfolio{
 section.portfolio-container{
 	width:100%;
 	height: 161em;
-	background-color: #ffffff;
+	background-color: $white-color;
 
 }
 
@@ -956,7 +961,7 @@ div#portfolio{
 	width: 100%;
 	clear: both;
 	box-sizing: border-box;
-	background-color: #ffffff;
+	background-color: $white-color;
 
 	h2{
 		@extend %h2-values;
@@ -1019,7 +1024,7 @@ div#top-contact{
 
 	h1{
 		width: 100%;
-		color: #ffffff;
+		color: $white-color;
 		font-size: 15em;
 		text-align: center;
 		margin: 0 auto;
@@ -1035,7 +1040,7 @@ div#top-contact{
 section#contact-container{
 	width:100%;
 	height: 110em;
-	background-color: #ffffff;
+	background-color: $white-color;
 }
 
 div#contact{
@@ -1066,7 +1071,7 @@ div#contact{
 
 h3.alert{
 	font-weight: bolder;
-	color: $orange-color;
+	color: $green-color;
 	font-size: 2.5em;
 	text-align: center;
 	margin-bottom: 2%;
@@ -1077,7 +1082,7 @@ div.p1{
 
 	h3{
 	font-weight: bolder;
-	color: $orange-color;
+	color: $green-color;
 	font-size: 2.5em;
 	text-align: center;
 	margin-bottom: 2%;
@@ -1088,7 +1093,7 @@ span.error{
 
 	h3{
 		font-weight: 200;
-		color: $orange-color;
+		color: $green-color;
 		font-size: 1.5em;
 		font-style: italic;
 		text-align: left;
@@ -1120,19 +1125,19 @@ input,textarea{
 
 /*button{
 	padding: 1em;
-	border: $orange-color solid .1em;
+	border: $green-color solid .1em;
 	font-size: 2.5em;
 	font-weight: 600;
-	color: $orange-color;
-	background-color: #ffffff;
+	color: $green-color;
+	background-color: $white-color;
 	margin: 0 auto;
 	box-sizing: border-box;
 	display: block;
 
 	&:hover, &:focus{
-		background-color: $orange-color;
-		color: #ffffff;
-		border: $orange-color solid .1em;
+		background-color: $green-color;
+		color: $white-color;
+		border: $green-color solid .1em;
 	}
 }*/
 
@@ -1150,7 +1155,7 @@ footer.main-footer{
 		text-align: center;
 		font-size: 1.5em;
 		font-weight: 200;
-		color: #ffffff;
+		color: $white-color;
 	}
 }
 
@@ -1179,7 +1184,7 @@ div#nipost-home{
 
 	h1{
 		width: 100%;
-		color: #ffffff;
+		color: $white-color;
 		font-size: 13em;
 		text-align: center;
 		margin: 0 auto;
@@ -1200,7 +1205,7 @@ div#nipost-home{
 		position: fixed;
 		z-index: -1;
 		font-family: 'Kaushan Script', cursive;
-		color: #ffffff;
+		color: $white-color;
 	}
 
 }
@@ -1349,7 +1354,7 @@ div#flyer-home{
 
 	h1{
 	    width: 100%;
-	    color: #ffffff;
+	    color: $white-color;
 	    font-size: 13em;
 	    text-align: center;
 	    margin: 0 auto;
@@ -1384,7 +1389,7 @@ div#interconf-home{
 
 	h1{
 		width: 100%;
-		color: #ffffff;
+		color: $white-color;
 		font-size: 13em;
 		text-align: center;
 		margin: 0 auto;
@@ -1512,31 +1517,50 @@ section.lowpro-first-container{
 -----------------------------------------------------------------------------*/
 
 @media screen and (max-width: 39.9375em) {
+
+	header.main-header{
+		background-color: rgba(0, 0, 0, 0.6);
+		padding: 2rem 0rem 2rem 0rem;
+	}
+
+	.title-bar{
+		background: transparent;
+		float: right;
+		position: relative;
+		top: 1.5em;
+		margin-right: 2rem;
+	}
+
+	.top-bar-left{
+		margin-left: 2rem;
+	}
+
 	nav.main-nav{
 		padding-right: 0;
-		background: $green-color;
-		height: 15em;
+		height: 18.5em;
+		border-top: $border $green-color;
+		position: relative;
+		top: 2em;
 
 		ul{
 			margin: 0 auto;
 			width: 100%;
 		    display: block;
-		    height: 15em;
+		    height: 18.5em;
 
 		    li{
 			    width: 100%;
-			    padding: 1.2em;
+			    padding: 0;
 
-				&:hover, &:focus, /*&:active*/{
-						background-color: #ffffff;
-						color: $green-color;
-					}
 				a{
 					text-align: center;
+					font-weight: 700;
+					padding: 1em;
+
 					&:hover, &:focus, /*&:active*/{
-						background-color: #ffffff;
-						color: $green-color;
-						border-bottom: none;
+					color: $green-color;
+					border-bottom: none;
+					cursor: hand;
 					}
 				}
 			}
@@ -1545,16 +1569,54 @@ section.lowpro-first-container{
 	}
 
 	.active-link{
+		color: $green-color !important;
 		border-bottom: none;
 	}
 
 	.home-nav, .projects-nav{
-		border-bottom: #ffffff $border;
+		border-bottom: $green-color $border;
 	}
 
-	.contact-nav{
-		border-bottom: none;
+	.contact-nav a{
+		padding-bottom: 0 !important;
 	}
+
+	div.home-bg {
+	    height: 63em;
+    }
+
+	section.home-container {
+	    height: 63em;
+	}
+
+	div#home{
+		padding-top: 0;
+		height: 63em;
+		clear: both;
+	}
+
+	div.home-contents{
+		margin-top: 50%;
+		margin-bottom: 45%;
+		height: 21em;
+
+		h1{
+			line-height: 0.8em;
+			font-size: 11em;
+			top:2em;
+		}
+
+		h2{
+			line-height: 1.1em;
+			font-size: 3em;
+		}
+	}
+
+	a.dwn-btn{
+		display: none;
+	}
+
+
 }
 
 
