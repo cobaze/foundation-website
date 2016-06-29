@@ -23,6 +23,12 @@ $body-font-size: 10px;
 $section-height: 96em;
 $white-font: $white-color;
 
+%row{
+	max-width: 75rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 %columns{
 	padding: 0 2rem 0 2rem;
 }
@@ -83,7 +89,7 @@ html{
 }
 
 body{
-	font-size: $body-font-size;
+	font-size: 62.5%;
 	font-family: 'Exo 2', sans-serif;
 	width: 100%;
 	margin: 0 auto;
@@ -245,32 +251,18 @@ div.home-bg{
 
 }
 
-
-section.home-container{
-
-	height: 100em;
-	max-height: 100%;
-	clear: both;
-	width: 100%;
-}
-
-div#home{
-	width: 100%;
-	padding-top: 12%;
+section#home{
 	box-sizing: border-box;
-	height: 100em;
-	max-height: 100%;
-	margin: 0 auto;
+	margin-top: 25em;
+	clear: both;
+	@extend %row;
+	height: 71em;
 }
 
 div.home-contents{
 	height: 25em;
 	width: 100%;
 	margin: 0 auto;
-	margin-top: 7%;
-	margin-bottom: 28em;
-	position: relative;
-	z-index: -1;
 
 	h1{
 		width: 100%;
@@ -279,10 +271,8 @@ div.home-contents{
 		text-align: center;
 		margin: 0 auto;
 		font-weight: bolder;
-		line-height: 1.5em;
+		line-height: 0.8em;
 		opacity: 0.7;
-		position: fixed;
-		z-index: -1;
 	}
 
 	h2{
@@ -293,35 +283,25 @@ div.home-contents{
 		margin: 0 auto;
 		font-weight: 300;
 		line-height: 1.5em;
-		position: fixed;
-		z-index: -1;
-	}
-
-	img{
-		margin: 0 auto;
-		display: block;
-		margin-top: 2%;
-		margin-bottom: 2%;
-		width: 80em;
-		max-width: 80%;
-		position: relative;
-		z-index: -1;
 	}
 }
 
-a.dwn-btn{
+div.dwn-btn{
 		max-width: 6em;
 		height: 6em;
 		max-height: 100%;
 		width: 100%;
 		display: block;
-		margin: 0 auto;
+		margin-top: 37em;
+	    margin-left: auto;
+	    margin-right: auto;
 		background-image: url(../imgs/dwn-btn-white.png);
 		background-size: 100%;
 		background-repeat: no-repeat;
 
 		&:hover, &:focus{
 			background-image: url(../imgs/dwn-btn.png);
+			cursor: hand;
 		}
 }
 
@@ -1516,10 +1496,11 @@ section.lowpro-first-container{
 /* START MEDIA QUARIES
 -----------------------------------------------------------------------------*/
 
+/* CELL PHONE */
 @media screen and (max-width: 39.9375em) {
 
 	header.main-header{
-		background-color: rgba(0, 0, 0, 0.6);
+		background-color: $alt-font-color;
 		padding: 2rem 0rem 2rem 0rem;
 	}
 
@@ -1581,29 +1562,25 @@ section.lowpro-first-container{
 		padding-bottom: 0 !important;
 	}
 
+    /*End header style*/
+
 	div.home-bg {
 	    height: 63em;
     }
 
-	section.home-container {
-	    height: 63em;
-	}
-
-	div#home{
-		padding-top: 0;
+	section#home{
+		margin-top: 25em;
+		width: 100%;
 		height: 63em;
 		clear: both;
 	}
 
 	div.home-contents{
-		margin-top: 50%;
-		margin-bottom: 45%;
 		height: 21em;
 
 		h1{
 			line-height: 0.8em;
-			font-size: 11em;
-			top:2em;
+			font-size: 10em;
 		}
 
 		h2{
@@ -1612,11 +1589,37 @@ section.lowpro-first-container{
 		}
 	}
 
-	a.dwn-btn{
+	div.dwn-btn{
 		display: none;
 	}
+}
 
+/* MEDIUM SCREEN */
 
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+	section#home{
+		height: 53.3em;
+	}
+
+	div.dwn-btn{
+		max-width: 6em;
+		height: 6em;
+		max-height: 100%;
+		width: 100%;
+		display: block;
+		margin-top: 20em;
+	    margin-left: auto;
+	    margin-right: auto;
+		background-image: url(../imgs/dwn-btn-white.png);
+		background-size: 100%;
+		background-repeat: no-repeat;
+
+		&:hover, &:focus{
+			background-image: url(../imgs/dwn-btn.png);
+			cursor: hand;
+		}
+	}
 }
 
 
